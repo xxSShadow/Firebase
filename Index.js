@@ -1,14 +1,14 @@
-const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
+const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 
 const Account = require('./AccountKey.json');
 
 initializeApp({ credential: cert(Account) });
 
-const db = getFirestore();
+const Database = getFirestore();
 
-docRef = db.collection('MEMBERS');
+Collection = Database.collection('MEMBERS');
 
-docRef.doc('alovelace');
+Collection.doc('alovelace');
 
-docRef.set({ name: 'User' });
+Collection.set({ name: 'User' });
