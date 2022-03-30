@@ -4,5 +4,5 @@ Account = require('./AccountKey.json');
 initializeApp({ credential: cert(Account) });
 Database = getFirestore();
 Collection = Database.collection('MEMBERS');
-Collection.doc('ID');
+Collection.doc('IDS');
 Collection.set({ NAME: 'USERNAME' });
