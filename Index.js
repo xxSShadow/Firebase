@@ -1,17 +1,18 @@
-const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+const { initializeApp, cert } = require('firebase-admin/app');
+const { getFirestore } = require('firebase-admin/firestore');
 
-const serviceAccount = require('./path/to/serviceAccountKey.json');
+const serviceAccount = require('./AccountKey.json');
 
 initializeApp({
   credential: cert(serviceAccount)
 });
 
-const db = getFirestore();
+const Database = getFirestore();
 
-const docRef = db.collection('users').doc('alovelace');
+const Collection = Database.collection('users');
+Collection.doc('alovelace');
 
-docRef.set({
+Collection.set({
   first: 'Ada',
   last: 'Lovelace',
   born: 1815
