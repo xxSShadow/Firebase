@@ -1,13 +1,13 @@
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 
-const Account = require('./AccountKey.json');
+Account = require('./AccountKey.json');
 
 initializeApp({
-  credential: cert(Account)
+  credential: cert(Account);
 });
 
-const Database = getFirestore();
+Database = getFirestore();
 
 Collection = Database.collection('GUILDS');
 
@@ -18,5 +18,9 @@ Document.set({
 });
 
 Collection.get().then(Snapshot => {
-  Snapshot.forEach(document => { console.log(document.data().Name) })
-})
+  
+  Snapshot.forEach(document => {
+    console.log(document.data().Name);
+  });
+  
+});
